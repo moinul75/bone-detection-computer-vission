@@ -24,14 +24,13 @@ if "model_vgg16.h5" in list_of_file:
 else:
     file_id = "1xtFkEqCABwxjDpgpmKXeAA1lE8fGNZgG"
     url = f"https://drive.google.com/uc?id={file_id}"
-    output = "model/model_vgg16.h5"  # Change the filename as needed
+    output = "model/model_vgg16.h5"  
     gdown.download(url, output, quiet=False)
 
 
 # model path 
 MODEL_PATH = 'model/model_vgg16.h5'  
 
-# lagecy tensorflow model load 
 
 
 
