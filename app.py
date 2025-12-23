@@ -85,7 +85,7 @@ def index():
             confidence = preds[0][idx]
 
 
-            # return on result with filename,label,confidence 
+           
             return render_template('index.html', filename=file.filename, label=label,
                                    confidence=f"{confidence*100:.2f}%") 
         else: 
