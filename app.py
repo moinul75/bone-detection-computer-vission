@@ -99,5 +99,13 @@ def uploaded_file(filename):
     return redirect(url_for('static', filename=f'uploads/{filename}'))
 
 
-if __name__ == '__main__': 
-    app.run(host="0.0.0.0", port=5000, debug=True)
+port = int(os.environ.get("PORT", 5000))
+
+if __name__ == '__main__':
+    # Production এ debug=False, development এ True
+    debug_mode = os.environ.get("FLASK_DEBUG", "False").lower() == "true"
+    
+    print(f"🚀 Server starting on http://0.0.0.0:{port}")
+    print(f"🔧 Debug mode: {debug_mode}")
+    
+    app.run(host="0.0.0.0", port=port, debug=debug_mode)
