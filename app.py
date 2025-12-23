@@ -29,7 +29,7 @@ else:
 
 
 # model path 
-MODEL_PATH = 'model/model_vgg16_1.h5'  
+MODEL_PATH = 'model/model_vgg16.h5'  
 
 # lagecy tensorflow model load 
 
