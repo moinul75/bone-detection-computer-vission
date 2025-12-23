@@ -12,6 +12,7 @@ import numpy as np
 app = Flask(__name__)   
 app.config['UPLOAD_FOLDER'] = 'static/uploads'  
 app.config["template_folder"] = "templates"
+os.makedirs('model', exist_ok=True)
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True) 
 
 
