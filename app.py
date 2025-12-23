@@ -15,9 +15,19 @@ app.config["template_folder"] = "templates"
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True) 
 
 
+#download the model from drive
+import gdown 
+list_of_file =  os.listdir('model')
 
-# static directory 
-# template directory 
+if "model_vgg16.h5" in list_of_file:
+    print("File exists")
+else:
+    file_id = "1xtFkEqCABwxjDpgpmKXeAA1lE8fGNZgG"
+    url = f"https://drive.google.com/uc?id={file_id}"
+    output = "model/model_vgg16.h5"  # Change the filename as needed
+    gdown.download(url, output, quiet=False)
+
+
 # model path 
 MODEL_PATH = 'model/model_vgg16_1.h5'  
 
